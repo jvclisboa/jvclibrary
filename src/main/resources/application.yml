@@ -1,0 +1,21 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/jvclibrary_kt
+    username: postgres
+    password: a
+    driverClassName: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migrations/postgres
+    table: db_migrations
+    baseline-on-migrate: true
+    validate-on-migrate: true
+    check-location: false
+    sql-migration-prefix: V
+    sql-migration-suffix: .sql
+    ignore-missing-migrations: true
