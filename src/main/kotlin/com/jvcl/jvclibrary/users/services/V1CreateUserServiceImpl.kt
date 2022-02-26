@@ -14,6 +14,6 @@ class V1CreateUserServiceImpl(private val userRepository: V1UserRepository, priv
         val user = V1User(null,
             userDTO.firstName, userDTO.lastName, userDTO.username, passwordEncoder.encode(userDTO.password), userDTO.birthDate)
         userRepository.save(user)
-        return user.from();
+        return user.from()
     }
 }
