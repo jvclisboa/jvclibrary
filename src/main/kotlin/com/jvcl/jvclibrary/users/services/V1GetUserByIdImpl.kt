@@ -10,6 +10,6 @@ import org.springframework.web.server.ResponseStatusException
 class V1GetUserByIdImpl(private val userRepository: V1UserRepository): V1GetUserById {
 
     override fun getUserById(userId: Long) = userRepository.findByIdOrNull(userId)?.from()
-        ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "User with id $userId does not exits")
+        ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "User with id $userId does not exists")
 
 }
